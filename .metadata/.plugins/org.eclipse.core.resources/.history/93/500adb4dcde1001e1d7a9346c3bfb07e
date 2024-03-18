@@ -1,0 +1,17 @@
+package com.abhi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abhi.entity.Author;
+import com.abhi.repo.AuthorRepo;
+import com.abhi.repo.BookRepo;
+
+@Service
+public class Bookservice {
+	@Autowired
+private BookRepo bookRepo;
+
+	@Autowired
+private AuthorRepo authorRepo;
+}

@@ -1,0 +1,28 @@
+package com.abhi.service;
+
+import java.util.Optional;
+
+import com.abhi.entity.Account;
+import com.abhi.entity.AccountPK;
+import com.abhi.repo.AccountRepo;
+
+public class AccountService {
+	private AccountRepo accountrepo;
+
+	public AccountService(AccountRepo accountrepo) {
+		this.accountrepo = accountrepo;
+	}
+
+	public void getDataUsingPK() {
+		AccountPK pk = new AccountPK();
+		pk.setAccId(101);
+		pk.setAccType("CURRENT");
+		pk.setHolderName("ABHI");
+		
+		Optional<Account> findbyId = accountrepo.findById(pk);
+		if(findbyId.isPresent()) {
+			System.out.println(findbyId.get());
+		}
+	}
+
+}

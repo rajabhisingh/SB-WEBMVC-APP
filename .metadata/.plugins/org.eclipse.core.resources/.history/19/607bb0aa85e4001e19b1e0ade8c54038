@@ -1,0 +1,17 @@
+package com.abhi.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.abhi.entity.Product;
+
+@Controller
+public class ProductController {
+	public ModelAndView loadPrduct() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("productobj", new Product());
+		mav.setViewName("productView");
+	    return mav;
+	}
+
+}

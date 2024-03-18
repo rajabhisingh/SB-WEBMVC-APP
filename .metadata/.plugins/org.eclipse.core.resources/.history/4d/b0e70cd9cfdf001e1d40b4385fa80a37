@@ -1,0 +1,23 @@
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.abhi.entity.Person;
+
+@RestController
+@RequestMapping("/person")
+public class PersonService {
+
+    private final PersonService personService;
+
+    @Autowired
+    public PersonController(PersonService personService) {
+        this.personService = personService;
+    }
+
+    @PostMapping("/add")
+    public Person addPerson(@RequestBody Person person, @RequestParam("photo") MultipartFile photo, @RequestParam("resume") MultipartFile resume) {
+        byte[] photoData = photo.getBytes();
+        byte[] resumeData = resume.getBytes();
+        return personService.savePerson(person, photoData, resumeData);
+    }
+}

@@ -1,0 +1,17 @@
+package in.abhi.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import in.abhi.repo.ProductRepo;
+
+@Controller
+public class ProductController {
+	ProductRepo productRepo;
+	
+	public String getAllProduct(Model model) {
+		return "products";
+		
+	}
+
+}

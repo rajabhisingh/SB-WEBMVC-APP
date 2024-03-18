@@ -1,0 +1,14 @@
+package com.abhi.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MsgController {
+public ModelAndView getMsg() {
+	ModelAndView mv = new ModelAndView();
+	mv.addObject("msg", "Welcome to India");
+	mv.setViewName("index");
+	return mv;
+}
+}

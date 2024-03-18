@@ -1,0 +1,30 @@
+package com.abhi.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.abhi.entity.Product;
+
+@Controller
+public class ProductController {
+	@GetMapping("/product")
+	public ModelAndView loadPrduct() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("productobj", new Product());
+		mav.setViewName("index");
+	    return mav;
+	}
+	@PostMapping("/product")
+	public ModelAndView handleProductSubmit(Product product) {
+		System.out.println(product);
+		
+		//todo 
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("msg","Product saved successfully");
+		mav.setViewName("success");
+		return mav;
+	}
+
+}

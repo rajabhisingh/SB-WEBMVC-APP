@@ -1,0 +1,18 @@
+package com.abhi.service;
+
+import org.springframework.stereotype.Service;
+
+import com.abhi.entity.Product;
+import com.abhi.repo.ProductRepo;
+
+@Service
+public class ProductService {
+private ProductRepo productRepo;
+
+public boolean saveProduct(Product p) {
+	productRepo.saveAll();
+return true;
+}
+
+
+}

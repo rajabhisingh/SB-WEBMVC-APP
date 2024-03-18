@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;15-SB-WEB&apos; to &apos;15-SB-WEB-APP&apos;" description="Rename resource &apos;15-SB-WEB&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/15-SB-WEB" name="15-SB-WEB-APP" stamp="1710608002322" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;15-SB-WEB-APP&apos; to &apos;15-SB-WEBMVC-APP&apos;" description="Rename resource &apos;15-SB-WEB-APP&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/15-SB-WEB-APP" name="15-SB-WEBMVC-APP" stamp="1710608035685" updateReferences="true"/>
+</session>

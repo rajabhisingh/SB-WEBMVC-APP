@@ -1,0 +1,27 @@
+package com.abhi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abhi.entity.Person;
+import com.abhi.repo.PersonRepo;
+
+@Service
+public class PersonService {
+
+	@Autowired
+    private PersonRepo personRepo;
+	
+	public void savePerson() {
+		
+		Person  person = new Person();
+		person.setName("ABHI");
+		person.setGender("MALE");
+		//person.setDob("12-02-2000");
+		//person.se
+		personRepo.save(person);
+	}
+    
+
+   
+}

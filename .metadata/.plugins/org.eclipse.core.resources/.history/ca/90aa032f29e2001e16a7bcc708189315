@@ -1,0 +1,18 @@
+package com.abhi.service;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.abhi.repo.TicketRepo;
+
+
+
+@Service
+public class TicketService {
+
+    @Autowired
+    private TicketRepo employeeRepo;
+
+    
+}

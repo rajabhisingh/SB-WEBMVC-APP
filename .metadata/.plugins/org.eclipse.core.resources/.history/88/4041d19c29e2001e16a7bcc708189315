@@ -1,0 +1,14 @@
+package com.abhi.repo;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public class TicketRepo  {
+	//public List<Ticket>  getTicket();
+
+ }
+
+

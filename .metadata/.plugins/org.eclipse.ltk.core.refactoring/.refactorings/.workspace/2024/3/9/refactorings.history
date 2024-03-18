@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;06-SB-JPA-App&apos; to &apos;06-SB-JPA-CrudOperation-App&apos;" description="Rename resource &apos;06-SB-JPA-App&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/06-SB-JPA-App" name="06-SB-JPA-CrudOperation-App" stamp="1709356469882" updateReferences="true"/>
+</session>

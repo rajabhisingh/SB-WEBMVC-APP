@@ -1,0 +1,21 @@
+<!doctype html>
+<html xmlns:th="http://www.thymele.org"
+<head>
+    <title>Products</title>
+</head>
+<body>
+    <h2>Products</h2>
+    <table border="1">
+        <tr>
+            <th>pid</th>
+            <th>pname</th>
+            <th>price</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.pid}"></td>
+            <td th:text="${product.pname}"></td>
+            <td th:text="${product.price}"></td>
+        </tr>
+    </table>
+</body>
+</html>

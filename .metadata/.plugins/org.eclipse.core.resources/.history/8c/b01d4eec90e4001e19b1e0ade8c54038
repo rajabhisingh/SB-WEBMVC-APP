@@ -1,0 +1,21 @@
+package com.abhi.service;
+
+import org.springframework.stereotype.Service;
+
+import com.abhi.entity.Product;
+import com.abhi.repo.ProductRepo;
+
+@Service
+public class ProductService {
+private ProductRepo productRepo;
+
+public void setData() {
+	Product p = new Product();
+	p.setPname("Mouse");
+	p.setPrice(200.0);
+	p.setQty(2);
+	productRepo.save(p);
+	System.out.println("Product is save succesfuly");
+	
+}
+}
