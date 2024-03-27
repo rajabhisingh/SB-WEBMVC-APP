@@ -1,9 +1,0 @@
-package com.abhi.repo;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.abhi.entity.AccountPK;
-
-public interface AccountRepo extends JpaRepository<Account, AccountPK> {
-
-}

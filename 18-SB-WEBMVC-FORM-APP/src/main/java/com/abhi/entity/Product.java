@@ -11,52 +11,44 @@ import jakarta.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer pid;
+	private Integer productId;
 	
-	private String pname;
+	private String productName;
 	
-	private Double price;
+	private Double productPrice;
 	
-	private Integer qty;
+	private Integer productQty;
 
-	public Integer getPid() {
-		return pid;
+	public Integer getProductId() {
+		return productId;
 	}
 
-	public void setPid(Integer pid) {
-		this.pid = pid;
+	public void setProductId(Integer productId) {
+		this.productId = productId;
 	}
 
-	public String getPname() {
-		return pname;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setPname(String pname) {
-		this.pname = pname;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public Double getPrice() {
-		return price;
+	public Double getProductPrice() {
+		return productPrice;
 	}
 
-	public void setPrice(Double price) {
-		this.price = price;
+	public void setProductPrice(Double productPrice) {
+		this.productPrice = productPrice;
 	}
 
-	public Integer getQty() {
-		return qty;
+	public Integer getProductQty() {
+		return productQty;
 	}
 
-	public void setQty(Integer qty) {
-		this.qty = qty;
+	public void setProductQty(Integer productQty) {
+		this.productQty = productQty;
 	}
-
-	@Override
-	public String toString() {
-		return "Product [pid=" + pid + ", pname=" + pname + ", price=" + price + ", qty=" + qty + "]";
-	}
-	
-	
-	
 
 }

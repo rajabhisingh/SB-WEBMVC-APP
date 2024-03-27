@@ -16,8 +16,9 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public boolean saveProduct(Product p) {
-		productRepo.save(p);
-		return true;
+		Product saveProduct = productRepo.save(p);
+		
+		return saveProduct.getProductId() != null;
 	}
 
 
@@ -27,4 +28,20 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 
-}
+	 @Override
+	    public void deleteProduct(Integer id) {
+	        productRepo.deleteById(id);
+	    }
+
+	    @Override
+	    public Product getProductById(Integer id) {
+	        return productRepo.findById(id).orElse(null);
+	    }
+
+	    @Override
+	    public void updateProduct(Product product) {
+	        productRepo.save(product);
+	    }
+	}
+
+

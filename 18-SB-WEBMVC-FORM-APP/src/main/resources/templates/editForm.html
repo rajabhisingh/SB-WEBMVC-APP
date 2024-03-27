@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+     Bootstrap CSS 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Edit Product</h2>
+        <form action="/product/update" method="post">
+            <input type="hidden" name="productId" th:value="${pobj.productId}">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control" id="productName" name="productName" th:value="${pobj.productName}" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Product Price</label>
+                <input type="number" class="form-control" id="price" name="price" th:value="${pobj.productprice}" required>
+            </div>
+             <div class="form-group">
+                <label for="qty">Product Qty</label>
+                <input type="number" class="form-control" id="qty" name="qty" th:value="${pobj.productQty}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -17,6 +17,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\JRTP\workspace\01-Mini-project"/>
 			<item value="D:\SPRING-BOOT\06-SB-JPA-SQL-App-7\pom.xml"/>
 			<item value="D:\SPRING-BOOT\04-SB-JPA\src\main\java\com\abhi\entities\ContactsMasterEntity.java"/>
 		</list>

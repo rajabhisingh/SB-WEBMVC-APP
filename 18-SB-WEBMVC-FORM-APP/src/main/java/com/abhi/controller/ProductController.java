@@ -17,20 +17,67 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping("/index")
-	public ModelAndView loadPrduct() {
-	
-	    return new ModelAndView("index","product", new Product());
+	@GetMapping("/product")
+	public ModelAndView loadForm() {
+	ModelAndView mav = new ModelAndView(); 
+	mav.addObject("pobj", new Product());
+	mav.setViewName("index");
+	return mav;
+	   
 	}
-	@PostMapping("/save")
-    public ModelAndView saveProduct(@ModelAttribute("product") Product p) {
-        productService.saveProduct(p);
-        return new ModelAndView("redirect:/index");
+	@PostMapping("/product")
+    public ModelAndView saveProduct(Product pobj) {
+		ModelAndView mav = new ModelAndView();
+        
+		boolean status = productService.saveProduct(pobj);
+		if(status) {
+			mav.addObject("smsg", "Product saved");
+		}else {
+			mav.addObject("emsg", "Failed to save");
+		}
+		mav.addObject("pobj", new Product());
+		mav.setViewName("index");
+		return mav;
+        
     }
+	
 
-    @GetMapping("/data")
+    @GetMapping("/products")
     public ModelAndView getAllProducts() {
         List<Product> productList = productService.getProducts();
-        return new ModelAndView("data", "products", productList);
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("plist", productList);
+        mav.setViewName("data");
+        return mav;
+    }
+    @GetMapping("/product/delete")
+    public ModelAndView deleteProduct(Integer id) {
+        productService.deleteProduct(id);
+        List<Product> productsList = productService.getProducts();
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("plist",productsList);
+        mav.setViewName("data");
+        return mav;
+    }
+
+    @GetMapping("/product/edit")
+    public ModelAndView loadUpdateForm(Integer id) {
+        ModelAndView mav = new ModelAndView();
+        Product product = productService.getProductById(id);
+        mav.addObject("pobj", product);
+        mav.setViewName("editForm");
+        return mav;
+    }
+
+    @PostMapping("/product/update")
+    public ModelAndView updateProduct(Product pobj) {
+        ModelAndView mav = new ModelAndView();
+        productService.updateProduct(pobj);
+        List<Product> productsList = productService.getProducts();
+        mav.addObject("plist", productsList);
+        mav.setViewName("data");
+        return mav;
+        
+        
     }
 }
